@@ -1,0 +1,6 @@
+# robots.txt for bellaviewhouse.com
+
+User-agent: *
+Disallow:
+
+Sitemap: https://www.bellaviewhouse.com/sitemap.xml

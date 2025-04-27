@@ -1,0 +1,87 @@
+/* Footer Styles */
+.footer {
+    background-color: #8a8a5a;
+    /* Footer background color */
+    color: white;
+    /* Set all text to white */
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+.footer .container {
+    color: white;
+    /* Ensure the text inside the container is white */
+}
+
+.footer .h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    /* Ensure section titles are white */
+}
+
+.footer .nav-item a {
+    color: white !important;
+    /* Set all navigation link text to white */
+    font-size: 1rem;
+    padding: 0;
+}
+
+.footer .nav-item a:hover {
+    color: #f1f1f1;
+    /* Change link color on hover */
+    text-decoration: none;
+}
+
+.footer .social-icons {
+    display: flex;
+    /* Flexbox to arrange icons horizontally */
+    gap: 20px;
+    /* Space between icons */
+    margin-top: 1rem;
+}
+
+.footer .social-icon i {
+    font-size: 2rem;
+    /* Increase icon size */
+    color: white;
+    /* Make icons white */
+}
+
+.footer .social-icon i:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge icon on hover */
+    transition: transform 0.3s ease;
+}
+
+.footer .bg-dark {
+    background-color: #333333;
+    /* Dark background for footer bottom section */
+}
+
+.footer .bg-dark .container {
+    color: white;
+}
+
+.footer .bg-dark .col-12 {
+    text-align: center;
+    font-size: 0.875rem;
+    /* Smaller text size */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Optional: Make the footer responsive */
+@media (max-width: 768px) {
+    .footer .container {
+        text-align: center;
+    }
+
+    .footer .nav-item {
+        margin-bottom: 1rem;
+    }
+
+    .footer .social-icons {
+        justify-content: center;
+    }
+}

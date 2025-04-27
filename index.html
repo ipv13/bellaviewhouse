@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Rent a beautiful house in Kolymbia, Rhodes. Bella View House offers the perfect vacation rental with stunning views, comfort, and direct booking options.">
+    <title>Rent a House in Kolymbia – Bella View House | Vacation Rental</title>
+    <link rel="canonical" href="https://www.bellaviewhouse.com" />
+	<link rel="apple-touch-icon" href="photos/logo144x144.jpg">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Kolymbia House Rental - Direct Booking for Best Deals & Stays" />
+    <meta property="og:description"
+        content="Book your stay in Kolymbia directly with the best rental offers. Comfortable and affordable houses for your vacation." />
+    <meta property="og:image" content="https://www.bellaviewhouse.com/photos/logo600x600.webp" />
+    <meta property="og:url" content="https://www.bellaviewhouse.com" />
+    <meta property="og:type" content="website" />
+    <!-- Schema JSON-LD for Bella View House -->
+    <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "RentalBusiness",
+                "name": "Bella View House - Kolymbia Rental",
+                "description": "Rent a private house in Kolymbia, Rhodes. Bella View House offers a peaceful and affordable vacation rental near the sea.",
+                "url": "https://www.bellaviewhouse.com",
+                "logo": "https://www.bellaviewhouse.com/photos/logo144x144.jpg",
+                "image": "https://www.bellaviewhouse.com/house-photos/31-modern-minimalist-house-exterior-kolymbia-1.jpg",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Street Name, Kolymbia",
+                    "addressLocality": "Kolymbia",
+                    "addressRegion": "Rhodes",
+                    "postalCode": "85103",
+                    "addressCountry": "GR"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+30-6946335740",
+                    "contactType": "Customer Service",
+                    "areaServed": "GR",
+                    "availableLanguage": "Greek"
+                },
+                "priceRange": "€€",
+                "mainEntityOfPage": "https://www.bellaviewhouse.com"
+            }
+    </script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <!-- Include Pikaday CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <style>
+        /* Light natural olive color scheme */
+        body {
+            background-color: #f9f9f3;
+            /* Light, natural background */
+            color: #555;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        h2 {
+            color: black;
+            font-size: 1.5rem;
+        }
+
+        .host-img {
+            color: #40551f;
+            font-size: 1.5rem; /* Increased font size */
+        }
+
+        .form-label {
+            color: #6c6c4a;
+        }
+        h3 {
+            font-size: 2rem; /* Adjust this value as needed */
+            color: #8a8a5a;
+        }
+        h4 {
+            font-size: 1.0rem; /* Adjust this value as needed */
+            color: #8a8a5a;
+        }
+        .fit-img {
+            object-fit: cover;  /* Ensures the image covers the container without distorting */
+            height: 1000px; /* Sets a fixed height for all images to maintain consistency */
+            width: 100%; /* Ensures images fill the width of the carousel */
+        }
+
+        .fit-img {
+            max-width: 100%;
+            max-height: 90vh; /* Ensures it doesn't overflow */
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Prevents distortion */
+        }
+        .feature-box {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #f8f9fa;
+        }
+        .feature-box i {
+            font-size: 20px;
+            color: black;
+            background-color: #f8f9fa;
+        }
+        .sleep-box {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #f8f9fa;
+        }
+        .sleep-box i {
+            color: black;
+            margin-right: 5px;
+        }
+        /* Footer */
+
+        .social-icons {
+            display: flex;
+            /* Use flexbox to arrange the icons horizontally */
+            gap: 50px;
+            /* Add space between the icons */
+        }
+
+        .social-icon i {
+            font-size: 1.5rem;
+            /* Increase icon size */
+        }
+
+        /* Optional: Adjust icon size for hover effect */
+        .social-icon i:hover {
+            transform: scale(1.1);
+            /* Slightly enlarge icon on hover */
+            transition: transform 0.3s ease;
+        }
+
+        /* Style for the Pikaday calendar container */
+        .pika-single {
+            background-color: #ffffff; /* White background for clarity */
+            border: 1px solid #ddd; /* Subtle border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            font-family: 'Arial', sans-serif;
+            padding: 10px;
+            max-width: 280px; /* Optional: to limit calendar size */
+        }
+
+        /* Style for free available dates */
+        .pika-single .pika-button.pika-day {
+            background-color: #ffffff !important; /* White background */
+            color: #333333; /* Dark text for readability */
+            border-radius: 50%; /* Rounded buttons */
+            padding: 10px;
+        }
+
+        /* Hover effect for available dates */
+        .pika-single .pika-button.pika-day:hover {
+            background-color: #f0f0f0; /* Light gray on hover */
+            color: #555555; /* Darker text */
+            cursor: pointer; /* Show pointer to indicate it's clickable */
+        }
+
+        /* Style for selected date */
+        .pika-single .pika-button.pika-day.selected {
+            background-color: #8a8a5a !important; /* Match website button color */
+            color: white !important;
+        }
+
+        /* Styling the navigation buttons (next/previous month) */
+        .pika-single .pika-nav {
+            background-color: #f8f9fa; /* Light background */
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+
+        /* Hover effect for navigation buttons */
+        .pika-single .pika-nav:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+    <!-- Background Overlay -->
+    <div class="overlay"></div>
+
+    <div class="container-fluid text-white py-2 contact-info">
+        <div class="row-6">
+            <span class="me-3"><i class="fas fa-phone-alt"></i> +30 6946335740</span>
+            <span class="me-3"><i class="fas fa-envelope"></i> bellaviewhouse@gmail.com</span>
+        </div>
+        <div class="row-6">
+            <span class="me-3">
+                <a href="https://www.instagram.com/kolymbiabellaviewhouse" target="_blank"
+                    class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </span>
+            <span>
+                <a href="https://www.facebook.com/profile.php?id=61573425854038" target="_blank"
+                    class="social-icon facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </span>
+            <span>
+                <a href="https://g.co/kgs/vd5aYf1" target="_blank" class="social-icon google">
+                    <i class="fab fa-google"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <div class="container my-5 navbar-inner">
+        <a class="navbar-brand" href="#">
+            <img src="photos/logo.jpeg" alt="Logo" width="180" height="180"
+                class="d-inline-block align-middle logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="facilities.html">Facilities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="location.html">Location</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="host.html">Host</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Booking Request Form -->
+<section id="bookingForm" class="container my-5 p-4 bg-light shadow rounded-3 "
+    style="position: relative; top: -100px; left: 0; right: 0; z-index: 2;">
+    <h3 class="mb-3 text-center">Request Special Offer</h3>
+    <form action="backend/process_booking.php" method="post">
+        <div class="row mb-1">
+            <div class="col-md-2">
+                <label for="checkIn" class="form-label">Check-in Date</label>
+                <!-- Use Pikaday for the Check-in date -->
+                <input type="text" class="form-control" id="checkIn" name="checkIn" placeholder="Select check-in date"
+                    required>
+            </div>
+            <div class="col-md-2">
+                <label for="checkInTime" class="form-label">Check-in Time</label>
+                <input type="time" class="form-control" id="checkInTime" name="checkInTime" required>
+            </div>
+            <div class="col-md-2">
+                <label for="checkOut" class="form-label">Check-out Date</label>
+                <!-- Use Pikaday for the Check-out date -->
+                <input type="text" class="form-control" id="checkOut" name="checkOut"
+                    placeholder="Select check-out date" required>
+            </div>
+            <div class="col-md-2">
+                <label for="checkOutTime" class="form-label">Check-out Time</label>
+                <input type="time" class="form-control" id="checkOutTime" name="checkOutTime" required>
+            </div>
+            <div class="col-md-2">
+                <label for="adults" class="form-label">Number of Adults</label>
+                <input type="number" class="form-control" id="adults" name="adults" placeholder="Number of adults"
+                    required min="1" required max="5" step="1">
+            </div>
+            <div class="col-md-2">
+                <label for="children" class="form-label">Number of Children</label>
+                <input type="number" class="form-control" id="children" name="children" placeholder="Number of children"
+                    min="0" required max="4" step="1">
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-md-4">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Your full name"
+                    required>
+            </div>
+            <div class="col-md-4">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="col-md-4">
+                <label for="telephone" class="form-label">Telephone Number</label>
+                <input type="tel" class="form-control" id="telephone" name="telephone"
+                    placeholder="Your telephone number" required>
+            </div>
+        </div>
+        <div class="mb-1">
+            <label for="specialRequests" class="form-label">Special Requests</label>
+            <textarea class="form-control" id="specialRequests" name="specialRequests" rows="4"
+                placeholder="Any special requirements?"></textarea>
+        </div>
+        <!-- Hidden input to store total price -->
+        <input type="hidden" id="totalPrice" name="totalPrice" value="">
+        <button type="submit" class="btn btn-primary w-100" style="background-color: #8a8a5a; border-color: white;">Send
+            Request</button>
+    </form>
+    <div id="priceDisplay" class="mt-3 text-center" style="font-weight: bold;"></div> <!-- Display Price -->
+    <!-- Display success/error message here -->
+    <?php
+        if (isset($message)) {
+            echo "<div id='responseMessage'>$message</div>";
+        }
+        ?>
+    <!-- Info -->
+    <div class="container mt-4" style="position: relative;">
+        <div class="row g-3">
+            <!-- Sleeping Arrangements -->
+            <div class="col-md-6 text-center">
+                <div class="sleep-box">
+                    <p><strong>Bedroom 1:</strong> 1 queen bed <i class="fa-solid fa-bed"></i></p>
+                    <p><strong>Bedroom 2:</strong> 1 queen bed <i class="fa-solid fa-bed"></i></p>
+                    <p><strong>Living room:</strong> 1 sofa bed <i class="fa-solid fa-couch"></i></p>
+                    <p><strong>Bathrooms:</strong> 2 bathrooms <i class="fa-solid fa-bath"></i> <i
+                            class="fa-solid fa-bath"></i></p>
+                    <p><i class="fa-solid fa-baby-carriage"></i> Free crib available on request</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box" style="margin-bottom: 30px;">
+                    <i class="fa-solid fa-home"></i> The entire place is yours
+                </div>
+                <div class="feature-box" style="margin-bottom: 30px;">
+                    <i class="fa-solid fa-hot-tub-person"></i> Hot tub/Jacuzzi
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-seedling"></i> Garden
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box" style="margin-bottom: 30px;">
+                    <i class="fa-solid fa-wifi"></i> High-speed Wi-Fi
+                </div>
+                <div class="feature-box" style="margin-bottom: 30px;">
+                    <i class="fa-solid fa-car"></i> Free parking
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-umbrella-beach"></i> Terrace
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="container my-5" style="position: relative; top: -90px;">
+    <div class="text-center mb-5">
+    
+        <!-- Top Decorative Line -->
+        <div class="mx-auto mb-4"
+            style="height: 3px; width: 80px; background: linear-gradient(to right, #000, #aaa, #000); border-radius: 2px;">
+        </div>
+    
+        <h1 class="mb-4">Discover Bella View House</h1>
+        <h2 class="mb-4">Kolymbia · Rhodes · Greece</h2>
+    
+        <!-- Bottom Decorative Line -->
+        <div class="mx-auto mt-4"
+            style="height: 3px; width: 80px; background: linear-gradient(to right, #000, #aaa, #000); border-radius: 2px;">
+        </div>
+    
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="lead">
+                Welcome to Bella View House, a serene and inviting retreat nestled in the picturesque town of Kolymbia, Rhodes. This
+                charming property offers a unique opportunity to experience the perfect blend of modern comfort and natural beauty.
+                Situated just 500 meters from the sparkling Aegean Sea, Bella View House is a cozy two-bedroom sanctuary designed for
+                relaxation, adventure, and everything in between.
+            </p>
+            <p class="lead">
+                Imagine waking up each morning to the soft, golden rays of the Mediterranean sun streaming through your windows. As you
+                sip your morning coffee on the terrace, you’ll be greeted by breathtaking panoramic views of the surrounding mountains,
+                creating a tranquil atmosphere that instantly puts your mind at ease. Whether you're enjoying the serenity of your
+                private space or exploring the lush landscape nearby, Bella View House offers the perfect environment for reconnecting
+                with nature and unwinding from the stresses of everyday life.
+            </p>
+            <p class="lead">
+                The beauty of Kolymbia lies in its harmonious balance between peace and convenience. Just a short stroll from the beach,
+                you can easily immerse yourself in the refreshing waters of the Aegean Sea during the day, then retreat to the calm and
+                comfort of the mountains in the evening. The area offers a variety of local tavernas, shops, and attractions, ensuring
+                you can enjoy the rich culture and charm of Rhodes without straying too far from home. Whether you're indulging in
+                delicious Greek cuisine, shopping for souvenirs, or exploring historical sites, everything you need is within easy
+                reach.
+            </p>
+            <p class="lead">
+                Bella View House isn’t just a place to stay—it's a space to create unforgettable memories. Whether you're looking for a
+                romantic escape, a fun-filled family vacation, or a peaceful solo retreat, our home offers the warmth, comfort, and
+                tranquility you're seeking. We’ve designed every corner of Bella View House to make you feel at home, with thoughtful
+                touches that cater to your every need.
+            </p>
+            <p class="lead">
+                Come and experience the enchanting beauty of Kolymbia from a fresh perspective. Whether it's the charm of the town or
+                the peaceful ambiance of Bella View House, we can’t wait to welcome you and share this magical corner of Rhodes with
+                you. Your perfect getaway begins here.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer pt-5 pb-3 text-white" style="background-color: #8a8a5a;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <a class="navbar-brand" href="#">
+                        <img src="photos/logo.jpeg" alt="Logo" width="180" height="180" class="d-inline-block align-middle logo-img">
+                    </a>
+                </div>
+                <div class="col-md-3 offset-lg-1">
+                    <div class="h5 text-uppercase fw-bold">Bella View House</div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0" 
+                                title="Book">Book</a></li>
+                        <li class="nav-item mb-2"><a href="gallery.html" class="nav-link p-0" 
+                                title="Gallery">Gallery</a></li>
+                        <li class="nav-item mb-2"><a href="facilities.html" class="nav-link p-0"
+                                title="Facilities">Facilities</a></li>
+                        <li class="nav-item mb-2"><a href="location.html" class="nav-link p-0"
+                                title="Nearby Beaches">Location</a></li>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="h5 text-uppercase fw-bold">Contact Us</div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="https://g.co/kgs/LxUbLAj" class="nav-link p-0" title="Contact Us"><span
+                                    class="bi bi-houses me-1 text-ccc"></span> Kolymbia 851 03, Rhodes - Greece</a></li>
+                        <li class="nav-item mb-2"><a href="tel:00306946335740" class="nav-link p-0"
+                                title="Call +30 6936757426"><span class="bi bi-telephone me-1 text-ccc"></span> +30 6946335740</a></li>
+                        <li class="nav-item mb-2"><a href="mailto: bellaviewhouse@gmail.com" class="nav-link p-0"
+                                title="Email bellaviewhouse@gmail.com"><span class="bi bi-envelope me-1 text-ccc"></span>
+                                bellaviewhouse@gmail.com</a></li>
+                    </ul>
+                    <div class="social-icons mt-2">
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61573425854038" title="Bella View House @ Facebook"
+                            target="_blank" rel="noreferrer" class="social-icon">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/kolymbiabellaviewhouse" title="Bella View House @ Instagram"
+                            target="_blank" rel="noreferrer" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a target="_blank" href="https://g.co/kgs/vd5aYf1" title="Bella View House @ Google Business" target="_blank"
+                            rel="noreferrer" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="background-color: #8a8a5a;">
+        <div class="container">
+            <div class="col-12 text-center text-ccc small pt-4 pb-3">
+                <hr class="bg-secondary">
+                © Copyright 2025 <span class="text-white">Bella View House</span>, All rights reserved
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<!-- Include Pikaday JS -->
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<script>
+    // Booked dates
+    var bookedDates = [
+        { start: new Date('2025-05-23'), end: new Date('2025-05-28') },
+        { start: new Date('2025-06-16'), end: new Date('2025-06-23') },
+        { start: new Date('2025-07-03'), end: new Date('2025-07-11') },
+        { start: new Date('2025-07-25'), end: new Date('2025-08-08') },
+        { start: new Date('2025-09-28'), end: new Date('2025-10-10') }
+    ];
+
+    // Prices for each month
+    var monthlyPrices = {
+        '01': 100,  // January
+        '02': 110,  // February
+        '03': 120,  // March
+        '04': 130,  // April
+        '05': 140,  // May
+        '06': 150,  // June
+        '07': 160,  // July
+        '08': 170,  // August
+        '09': 180,  // September
+        '10': 190,  // October
+        '11': 200,  // November
+        '12': 210   // December
+    };
+
+    // Function to check if a date is within a booked range
+    function isDateBooked(date) {
+        for (var i = 0; i < bookedDates.length; i++) {
+            var start = bookedDates[i].start;
+            var end = bookedDates[i].end;
+            if (date >= start && date <= end) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Function to format the date as dd-mm-yyyy
+    function formatDate(date) {
+        let day = date.getDate();
+        let month = date.getMonth() + 1; // Months are zero-based
+        let year = date.getFullYear();
+        return (day < 10 ? '0' + day : day) + '-' + (month < 10 ? '0' + month : month) + '-' + year;
+    }
+
+    // Function to calculate the number of days between two dates
+    function calculateDuration(checkInDate, checkOutDate) {
+        var oneDay = 24 * 60 * 60 * 1000; // Hours*minutes*seconds*milliseconds
+        var diffDays = Math.round((checkOutDate - checkInDate) / oneDay);
+        return diffDays;
+    }
+
+    // Function to display the price based on selected check-in and check-out dates
+    function displayPrice(checkInDate, checkOutDate) {
+        var checkInMonth = checkInDate.getMonth() + 1; // Get month (1-based)
+        var checkOutMonth = checkOutDate.getMonth() + 1; // Get month (1-based)
+
+        var checkInMonthStr = checkInMonth < 10 ? '0' + checkInMonth : checkInMonth.toString(); // Ensure two digits
+        var checkOutMonthStr = checkOutMonth < 10 ? '0' + checkOutMonth : checkOutMonth.toString(); // Ensure two digits
+
+        // Ensure check-in and check-out are in the same month
+        if (checkInMonthStr === checkOutMonthStr) {
+            var pricePerDay = monthlyPrices[checkInMonthStr];
+            var days = calculateDuration(checkInDate, checkOutDate);
+            var totalPrice = pricePerDay * days;
+
+            document.getElementById('priceDisplay').innerText = "Price for " + days + " days in " + checkInDate.toLocaleString('default', { month: 'long', year: 'numeric' }) + ": " + totalPrice + " €";
+        } else {
+            document.getElementById('priceDisplay').innerText = "Please select a check-in and check-out date in the same month.";
+        }
+        // Update the hidden input field with the total price
+        document.getElementById('totalPrice').value = totalPrice;
+    }
+
+    // Initialize Pikaday for check-in date
+    var checkInPicker = new Pikaday({
+        field: document.getElementById('checkIn'),
+        format: 'DD-MM-YYYY',
+        minDate: new Date(),
+        disableDayFn: function (date) {
+            return isDateBooked(date); // Disable the date if it's booked
+        },
+        onSelect: function () {
+            var selectedDate = this.getDate();
+            document.getElementById('checkIn').value = formatDate(selectedDate); // Update the input field with the selected date
+            if (checkOutPicker.getDate()) {
+                displayPrice(selectedDate, checkOutPicker.getDate()); // Show price if check-out is already selected
+            }
+        }
+    });
+
+    // Initialize Pikaday for check-out date
+    var checkOutPicker = new Pikaday({
+        field: document.getElementById('checkOut'),
+        format: 'DD-MM-YYYY',
+        minDate: new Date(),
+        disableDayFn: function (date) {
+            return isDateBooked(date); // Disable the date if it's booked
+        },
+        onSelect: function () {
+            var selectedDate = this.getDate();
+            document.getElementById('checkOut').value = formatDate(selectedDate); // Update the input field with the selected date
+            if (checkInPicker.getDate()) {
+                displayPrice(checkInPicker.getDate(), selectedDate); // Show price if check-in is already selected
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>

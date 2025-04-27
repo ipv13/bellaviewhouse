@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Explore the photo gallery of Kolymbia Bella View House in Rhodes. View stunning interiors, scenic views, and relaxing outdoor spaces." />
+    <meta name="keywords"
+        content="Kolymbia Bella View House, Rhodes accommodation, Greece villa, photo gallery, sea view, vacation rental" />
+    <meta name="author" content="Kolymbia Bella View House" />
+
+    <title>Gallery - Bella View House</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- GLightbox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <style>
+        body {
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            color: black;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        h3 {
+            color: black;
+        }
+        /* Custom style for a larger modal */
+        .modal-lg-custom {
+            max-width: 90%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+            border-radius: 50%; /* optional */
+        }
+
+        /* OR: change the icon color with a filter (for default Bootstrap arrow icons) */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1); /* white icons */
+        }
+
+        .carousel-inner img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain; /* 'contain' preserves full image in modal */
+        }
+
+        .carousel {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .img-fluid-custom {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2; /* Keeps a consistent aspect ratio for 1200x800 look */
+            object-fit: cover;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+        <!-- Background Overlay -->
+        <div class="overlay"></div>
+    
+        <div class="container-fluid text-white py-2 contact-info">
+            <div class="row-6">
+                <span class="me-3"><i class="fas fa-phone-alt"></i> +30 6946335740</span>
+                <span class="me-3"><i class="fas fa-envelope"></i> bellaviewhouse@gmail.com</span>
+            </div>
+            <div class="row-6">
+                <span class="me-3">
+                    <a href="https://www.instagram.com/kolymbiabellaviewhouse" target="_blank"
+                        class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="https://www.facebook.com/profile.php?id=61573425854038" target="_blank"
+                        class="social-icon facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="https://g.co/kgs/vd5aYf1" target="_blank" class="social-icon google">
+                        <i class="fab fa-google"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+    
+        <div class="container my-5 navbar-inner">
+            <a class="navbar-brand" href="#">
+                <img src="photos/logo.jpeg" alt="Logo" width="180" height="180"
+                    class="d-inline-block align-middle logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="location.html">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="host.html">Host</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header -->
+    <header class="text-white p-5 text-center">
+
+        <!-- Top Decorative Line -->
+        <div class="mx-auto mb-4"
+            style="height: 3px; width: 80px; background: linear-gradient(to right, #000, #aaa, #000); border-radius: 2px;">
+        </div>
+
+        <h1 class="display-3 mb-4">Photo Gallery</h1>
+        <h2 class="h3 mb-3" style="color: black;">Bella View House · Kolymbia, Rhodes, Greece</h2>
+        <p class="lead mb-4" style="color: black;">
+            Welcome to the Bella View House photo gallery! Step inside and discover the charm of Rhodes through our stunning
+            pictures.
+            From the inviting interiors to the breathtaking views, every detail has been designed to make your stay
+            unforgettable.
+            Immerse yourself in the beauty of Greek hospitality and imagine a relaxing getaway in this peaceful haven.
+        </p>
+
+        <!-- Bottom Decorative Line -->
+        <div class="mx-auto mt-4"
+            style="height: 3px; width: 80px; background: linear-gradient(to right, #000, #aaa, #000); border-radius: 2px;">
+        </div>
+
+    </header>
+
+    <main class="container my-5">
+        <!-- Photo Section -->
+        <div class="container mt-4 position-relative">
+            <div class="row g-3">
+                <!-- First Row -->
+                <div class="col-md-8">
+                    <img src="house-photos/31-modern-minimalist-house-exterior-kolymbia-1.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(0)" loading="lazy">
+                </div>
+                <div class="col-md-4 d-flex flex-column justify-content-between">
+                    <img src="house-photos/2-cozy-living-room-large-window-smart-tv-2.webp" class="img-fluid-custom rounded mb-2" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(1)" loading="lazy">
+                    <img src="house-photos/5-cozy-living-room-large-window-smart-tv-1.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(4)" loading="lazy">
+                </div>
+            </div>
+    
+            <!-- Second Row with 6 Images -->
+            <div class="row g-3 mt-3">
+                <div class="col-md-2 col-6">
+                    <img src="house-photos/3-modern-open-kitchen-dining-area.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(2)" loading="lazy">
+                </div>
+                <div class="col-md-2 col-6">
+                    <img src="house-photos/23-modern-bedroom-balcony-city-mountain-view.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(22)" loading="lazy">
+                </div>
+                <div class="col-md-2 col-6">
+                    <img src="house-photos/25-private-terrace-hot-tub-loungers-view.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(24)" loading="lazy">
+                </div>
+                <div class="col-md-2 col-6">
+                    <img src="house-photos/14-kolymbia-house-bedroom-double-bed-modern-decor-3.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(13)" loading="lazy">
+                </div>
+                <div class="col-md-2 col-6">
+                    <img src="house-photos/28-kolymbia-house-garden-mountain-view-exterior.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(27)" loading="lazy">
+                </div>
+                <div class="col-md-2 col-6 position-relative">
+                    <img src="house-photos/27-kolymbia-house-garden-mountain-view-exterior-1.webp" class="img-fluid-custom rounded" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" onclick="openCarousel(26)" loading="lazy">
+                    <div class="image-overlay" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openCarousel(25)">
+                        +20 photos
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal with Carousel -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg-custom">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Carousel -->
+                        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" id="carouselItems">
+                                <!-- Images injected dynamically -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer pt-5 pb-3 text-white" style="background-color: #8a8a5a;">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <a class="navbar-brand" href="#">
+                            <img src="photos/logo.jpeg" alt="Logo" width="180" height="180"
+                                class="d-inline-block align-middle logo-img">
+                        </a>
+                    </div>
+                    <div class="col-md-3 offset-lg-1">
+                        <div class="h5 text-uppercase fw-bold">Bella View House</div>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0" title="Book">Book</a></li>
+                            <li class="nav-item mb-2"><a href="gallery.html" class="nav-link p-0"
+                                    title="Gallery">Gallery</a></li>
+                            <li class="nav-item mb-2"><a href="facilities.html" class="nav-link p-0"
+                                    title="Facilities">Facilities</a></li>
+                            <li class="nav-item mb-2"><a href="location.html" class="nav-link p-0"
+                                    title="Nearby Beaches">Location</a></li>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-md-4">
+                        <div class="h5 text-uppercase fw-bold">Contact Us</div>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="https://g.co/kgs/LxUbLAj" class="nav-link p-0" title="Contact Us"><span
+                                        class="bi bi-houses me-1 text-ccc"></span> Kolymbia 851 03, Rhodes - Greece</a></li>
+                            <li class="nav-item mb-2"><a href="tel:00306946335740" class="nav-link p-0"
+                                    title="Call +30 6936757426"><span class="bi bi-telephone me-1 text-ccc"></span> +30 6946335740</a></li>
+                            <li class="nav-item mb-2"><a href="mailto:bellaviewhouse@gmail.com" class="nav-link p-0"
+                                    title="Email bellaviewhouse@gmail.com"><span class="bi bi-envelope me-1 text-ccc"></span>
+                                    bellaviewhouse@gmail.com</a></li>
+                        </ul>
+                        <div class="social-icons mt-2">
+                            <a target="_blank" href="https://www.facebook.com/profile.php?id=61573425854038"
+                                title="Bella View House @ Facebook" target="_blank" rel="noreferrer" class="social-icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a target="_blank" href="https://www.instagram.com/kolymbiabellaviewhouse"
+                                title="Bella View House @ Instagram" target="_blank" rel="noreferrer" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a target="_blank" href="https://g.co/kgs/vd5aYf1" title="Bella View House @ Google Business"
+                                target="_blank" rel="noreferrer" class="social-icon">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" style="background-color: #8a8a5a;">
+            <div class="container">
+                <div class="col-12 text-center text-ccc small pt-4 pb-3">
+                    <hr class="bg-secondary">
+                    © Copyright 2025 <span class="text-white">Bella View House</span>, All rights reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Array of images
+        const images = [
+            'house-photos/1-modern-minimalist-house-exterior-kolymbia.webp',
+            'house-photos/2-cozy-living-room-large-window-smart-tv-2.webp',
+            'house-photos/3-modern-open-kitchen-dining-area.webp',
+            'house-photos/4-cozy-living-room-large-window.webp',
+            'house-photos/5-cozy-living-room-large-window-smart-tv-1.webp',
+            'house-photos/6-cozy-living-room-large-window-smart-tv.webp',
+            'house-photos/7-modern-open-kitchen-dining-area-1.webp',
+            'house-photos/8-modern-open-kitchen-dining-area-2.webp',
+            'house-photos/10-modern-open-concept-dining-kitchen-staircase-bedroom-interior.webp',
+            'house-photos/11-contemporary-bathroom-walk-in-shower-vanity.webp',
+            'house-photos/12-modern-tiled-bathroom-shower-with-rainhead.webp',
+            'house-photos/13-compact-laundry-room-with-front-load-washer-and-wicker-basket.webp',
+            'house-photos/14-kolymbia-house-bedroom-double-bed-modern-decor-3.webp',
+            'house-photos/15-cozy-bedroom-wardrobe-natural-light-windows.webp',
+            'house-photos/16-kolymbia-house-bedroom-double-bed-modern-decor-4.webp',
+            'house-photos/17-elegant-modern-bathroom-with-marble-tiles.webp',
+            'house-photos/18-elegant-modern-bathroom-with-marble-tiles-3.webp',
+            'house-photos/19-luxury-bathroom-shower-panel-with-jet-sprayers-marble-tiles.webp',
+            'house-photos/20-kolymbia-house-bedroom-double-bed-modern-decor.webp',
+            'house-photos/21-kolymbia-house-bedroom-double-bed-modern-decor-1.webp',
+            'house-photos/22-kolymbia-house-bedroom-double-bed-modern-decor-2.webp',
+            'house-photos/23-modern-bedroom-balcony-city-mountain-view.webp',
+            'house-photos/24-private-terrace-hot-tub-loungers-sunset-view.webp',
+            'house-photos/25-private-terrace-hot-tub-loungers-view.webp',
+            'house-photos/26-private-terrace-hot-tub-loungers-view-1.webp',
+            'house-photos/27-kolymbia-house-garden-mountain-view-exterior-1.webp',
+            'house-photos/28-kolymbia-house-garden-mountain-view-exterior.webp',
+            'house-photos/29-art-photo-1.webp',
+            'house-photos/30-art-photo-2.wepb'
+        ];
+        function openCarousel(selectedIndex) {
+            const carouselItems = document.getElementById('carouselItems');
+            carouselItems.innerHTML = ''; // Clear existing items
+
+            // Create carousel items dynamically based on the images array
+            images.forEach((src, index) => {
+                const isActive = index === selectedIndex ? 'active' : ''; // Make the selected image active
+                const item = `
+                    <div class="carousel-item ${isActive}">
+                        <img src="${src}" class="d-block w-100" alt="Gallery Image">
+                    </div>
+                `;
+                carouselItems.innerHTML += item;
+            });
+        }
+    </script>
+</body>
+
+</html>
